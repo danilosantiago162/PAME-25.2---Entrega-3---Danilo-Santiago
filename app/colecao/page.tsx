@@ -1,40 +1,52 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { products } from "../Produtos/produtos";
+import { useCart } from "../carrinho_global/carrinho_global";
 
 export default function Colecao() {
-    return(
-        <div className="bg-white flex-col items-center flex p-6">
-            <div className="h-20 w-full" >
-                <p className="text-amber-700 text-3xl">Coleção</p>
+  const { addToCart } = useCart();
+
+  return (
+    <div className="bg-white flex flex-col items-center p-6">
+      <div className="h-20 w-full flex items-center">
+        <p className="text-green-700 text-3xl">Coleção</p>
+      </div>
+
+      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="bg-green-50 border border-green-100 rounded-xl overflow-hidden shadow-sm flex flex-col"
+          >
+            <div className="relative w-full h-72">
+              <Image
+                src={product.imagem} 
+                alt={product.nome}
+                fill
+                className="object-cover"
+                priority={false}
+              />
             </div>
-            <div className= "bg-amber-100 flex flex-row justify-center items-center text-amber-200 w-full">
-                <div className="flex-1 flex items-center flex-col">
-                    <Image src="/logo_livia_fontinelli_2.png" alt="Foto" width={350} height={350} />
-                    <div className="w-full flex flex-col item-center">
-                        <p className="p-2 text-black text-2xl ">Brinco de ouro argentino</p>
-                        <p className="p-2 text-black ">Valor: R$ 15000,00</p>
-                    </div>
-                    <Image src="/logo_livia_fontinelli_2.png" alt="Foto" width={350} height={350} />
-                    <div className="w-full flex flex-col item-center">
-                        <p className="p-2 text-black text-2xl ">Brinco de ouro argentino</p>
-                        <p className="p-2 text-black ">Valor: R$ 15000,00</p>
-                    </div>
-                </div>
-                <div className="flex-1 flex flex-col">
-                    <Image src="/logo_livia_fontinelli_2.png" alt="Foto" width={350} height={350} />
-                    <div className="w-full flex flex-col item-center">
-                        <p className="p-2 text-black text-2xl">Brinco de ouro argentino</p>
-                        <p className="p-2 text-black ">Valor: R$ 15000,00</p>
-                    </div>
-                </div>
-                <div className="flex-1 flex flex-col">
-                    <Image src="/logo_livia_fontinelli_2.png" alt="Foto" width={350} height={350} />
-                    <div className="w-full flex flex-col item-center">
-                        <p className="p-2 text-black text-2xl">Brinco de ouro argentino</p>
-                        <p className="p-2 text-black ">Valor: R$ 15000,00</p>
-                    </div>
-                </div>
+
+            <div className="p-4 flex flex-col gap-3">
+              <div className="flex flex-col">
+                <p className="text-black text-lg font-semibold">{product.nome}</p>
+                <p className="text-black">
+                  R$ {Number(product.preco).toFixed(2)}
+                </p>
+              </div>
+
+              <button
+                className="mt-2 bg-white text-black px-4 py-2 rounded-lg hover:opacity-90 transition"
+                onClick={() => addToCart(product)}
+              >
+                Adicionar ao carrinho
+              </button>
             </div>
-        </div>  
-    );
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
