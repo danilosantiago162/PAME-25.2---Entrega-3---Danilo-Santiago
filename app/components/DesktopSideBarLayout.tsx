@@ -19,7 +19,7 @@ export default function DesktopSidebarLayout({
     <div className="min-h-screen flex p-2">
       {/* Sidebar: só desktop, empurra o conteúdo */}
       <aside
-        className={`hidden md:block border-r bg-amber-700 overflow-hidden transition-[width] duration-300 ${
+        className={`hidden md:block border-r bg-amber-800 overflow-hidden transition-[width] duration-300 ${
           open ? "w-64" : "w-0"
         }`}
       >
