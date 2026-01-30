@@ -19,11 +19,11 @@ export default function DesktopSidebarLayout({
     <div className="min-h-screen flex p-2">
       {/* Sidebar: só desktop, empurra o conteúdo */}
       <aside
-        className={`hidden md:block border-r bg-amber-400 overflow-hidden transition-[width] duration-300 ${
+        className={`hidden md:block border-r bg-amber-700 overflow-hidden transition-[width] duration-300 ${
           open ? "w-64" : "w-0"
         }`}
       >
-        <div className="w-64 p-4">
+        <div className="w-64 p-4 text-amber-100">
           <p className="font-semibold mb-4">Menu</p>
           <nav className="space-y-2">
             <Link className="block hover:underline" href="/">
@@ -40,7 +40,7 @@ export default function DesktopSidebarLayout({
       </aside>
 
       {/* Área principal */}
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 flex flex-col min-h-screen">
         {/* Header + botão (botão só no desktop) */}
         <div className="relative">
           <button
@@ -54,7 +54,9 @@ export default function DesktopSidebarLayout({
           {header}
         </div>
 
-        <main>{children}</main>
+        <main className="flex-1 min-h-0">
+            {children}
+        </main>
 
         {footer ? <div>{footer}</div> : null}
       </div>
