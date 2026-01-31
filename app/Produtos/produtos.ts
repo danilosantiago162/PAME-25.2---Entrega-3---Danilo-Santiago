@@ -3,6 +3,7 @@ export type Product = {
   nome: string;
   preco: number;
   imagem: string;
+  categoria: string;
 };
 
 export const products: Product[] = [
@@ -10,18 +11,28 @@ export const products: Product[] = [
     id: "1",
     nome: "Brinco de Ouro",
     preco: 15000,
-    imagem: "/logo_livia_fontinelli_2.png"
+    imagem: "/brincos_sem_fundo.png",
+    categoria: "Brinco",
   },
   {
     id: "2",
-    nome: "Colar Prata",
+    nome: "Colar Dourado",
     preco: 8000,
-    imagem: "/logo_livia_fontinelli_2.png"
+    imagem: "/colar_alternativo_transparente.png",
+    categoria: "Colar",
   },
   {
     id: "3",
     nome: "Anel Luxo",
     preco: 12000,
-    imagem: "/logo_livia_fontinelli_2.png"
+    imagem: "/anel_transparente.png",
+    categoria: "Anel",
+  },
+  {
+    id: "4",
+    nome: "Relógio de Luxo",
+    preco: 12000,
+    imagem: "/relogio_final (1).png",
+    categoria: "Relógio",
   },
 ];

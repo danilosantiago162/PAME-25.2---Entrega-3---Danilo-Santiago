@@ -19,18 +19,21 @@ export default function DesktopSidebarLayout({
     <div className="min-h-screen flex p-2">
       {/* Sidebar: só desktop, empurra o conteúdo */}
       <aside
-        className={`hidden md:block border-r bg-black overflow-hidden transition-[width] duration-300 ${
+        className={`hidden md:block border-r bg-white overflow-hidden transition-[width] duration-300 ${
           open ? "w-64" : "w-0"
         }`}
       >
-        <div className="w-64 p-4 text-green-100">
+        <div className="w-64 p-4 text-amber-800">
           <p className="font-semibold mb-4">Menu</p>
           <nav className="space-y-2">
             <Link className="block hover:underline" href="/">
-              Página Inicial
+              Início
             </Link>
             <Link className="block hover:underline" href="/colecao">
-              Coleção
+              Coleções
+            </Link>
+            <Link className="block hover:underline" href="/#fim">
+              Sobre a Marca
             </Link>
             <Link className="block hover:underline" href="/carrinho">
               Carrinho
@@ -45,7 +48,7 @@ export default function DesktopSidebarLayout({
         <div className="relative">
           <button
             onClick={() => setOpen((v) => !v)}
-            className="hidden md:inline-flex items-center text-green-800 gap-2 absolute left-4 top-4 z-10 bg-green-100 backdrop-blur px-3 py-2 rounded-md border border-green-800"
+            className="hidden md:inline-flex items-center text-amber-800 gap-2 absolute left-4 top-4 z-10 bg-amber-100 backdrop-blur px-3 py-2 rounded-md border border-amber-800"
             aria-label={open ? "Fechar sidebar" : "Abrir sidebar"}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
