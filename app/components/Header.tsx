@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ShoppingBag } from "lucide-react";
 
 export default function Header(){
     return(
@@ -21,8 +22,8 @@ export default function Header(){
             <div className="flex-1 flex items-center justify-end">
                 <Link
                 href="/carrinho"
-                className="text-amber-800 text-2xl">
-                CARRINHO
+                className="text-amber-800 text-2xl pr-6">
+                    <ShoppingBag size={50} strokeWidth={2} />
                 </Link> 
             </div>  
         </header>
