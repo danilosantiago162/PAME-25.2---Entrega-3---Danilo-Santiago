@@ -16,10 +16,10 @@ export default function DesktopSidebarLayout({
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="min-h-screen flex p-2">
+    <div className="min-h-screen flex">
       {/* Sidebar: só desktop, empurra o conteúdo */}
       <aside
-        className={`hidden md:block border-r bg-white overflow-hidden transition-[width] duration-300 ${
+        className={`hidden md:block bg-white overflow-hidden transition-[width] duration-300 ${
           open ? "w-64" : "w-0"
         }`}
       >

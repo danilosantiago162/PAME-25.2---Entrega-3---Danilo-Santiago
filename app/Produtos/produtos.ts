@@ -32,7 +32,7 @@ export const products: Product[] = [
     id: "4",
     nome: "Relógio de Luxo",
     preco: 12000,
-    imagem: "/relogio_final (1).png",
+    imagem: "/relogio_final.png",
     categoria: "Relógio",
   },
 ];
