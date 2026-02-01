@@ -2,16 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 
+{/*Função que cria a estrutura da header*/}
 export default function Header(){
     return(
         <header className="bg-amber-100 flex flex-row p-6 w-full h-40 justify-center items-center">
             <div className="flex-1">
+                {/*Logo da marca servindo como link para página inicial*/}
                 <Link href={"/"}>
                     <p className="text-amber-800 text-2xl pt-2">
                         <Image src="/logo_livia_fontinelli_2.png" alt="Foto" width={250} height={250} />
                     </p>
                 </Link>
             </div>
+            {/*Link para página de coleção*/}
             <div className="flex-1 flex items-center justify-center">
                 <Link  
                 href="/colecao"
@@ -19,6 +22,7 @@ export default function Header(){
                 COLEÇÃO
                 </Link>
             </div>
+            {/*Ícone de carrinho no canto superior direito*/}
             <div className="flex-1 flex items-center justify-end">
                 <Link
                 href="/carrinho"

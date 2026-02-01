@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      
-      <div className="bg-amber h-20 w-full">
+      {/* Espaço entre header e Hero section */}
+      <div className="bg-white h-20 w-full">
 
       </div>
+      {/*Hero section*/}
       <div className="flex flex-row justify-center items-center bg-amber-100 h-120 w-full">
         <div className="flex-1 flex justify-center items-center">
           <Image src="/anel_sem_fundo.png" alt="Foto" width={600} height={600} />
@@ -21,9 +21,11 @@ export default function Home() {
           </p>
         </div>  
       </div>
+      {/*Espaçamento de seções */}
       <div className="bg-white h-20 w-full">
 
       </div>
+      {/*Seção de História da marca*/}
       <div className="flex flex-col bg-amber-100 justify-center items-center p-6">
         <p className="text-3xl text-amber-800 font-bold p-10 ">
           História da Marca
@@ -42,7 +44,7 @@ export default function Home() {
           marca representa permanência, afeto e histórias que merecem ser eternizadas.
         </p>
       </div>
-
+      {/*Espaçamento do footer*/}
       <div className="bg-white h-20 w-full">
 
       </div>

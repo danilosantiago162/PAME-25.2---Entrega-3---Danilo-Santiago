@@ -6,11 +6,13 @@ import { products } from "../Produtos/produtos";
 import { useCart } from "../carrinho_global/carrinho_global";
 import Link from "next/link";
 
+
+{/*Função exportadora de página de coleção*/}
 export default function Colecao() {
   const { addToCart } = useCart();
 
 
-
+  
   return (
     <div className="bg-white flex flex-col items-center p-6">
       <div className="h-20 w-full flex items-center">
@@ -18,11 +20,14 @@ export default function Colecao() {
       </div>
 
       <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
+
+        {/*Procura cada produto e o insere no grid formatado, geralmente de 3 colunas, mas varia de acordo com a largura da tela*/}
+        {products.map((product) => ( 
             <div
                 key={product.id}
                 className="bg-amber-50 border border-amber-100 rounded-xl overflow-hidden shadow-sm flex flex-col"
             >
+                {/*Link no componente de grid que leva para página do produto*/}
                 <Link
                     href={`/pagProdutos/${encodeURIComponent(String(product.id))}`}
                     className="flex flex-col flex-1"
@@ -42,7 +47,7 @@ export default function Colecao() {
                     <p>{product.categoria}</p>
                     </div>
                 </Link>
-
+                {/*Botão de adição ao carrinho*/}
                 <button
                     className="
                         mt-2 bg-white text-black px-4 py-2 

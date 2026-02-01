@@ -13,7 +13,7 @@ export default function DesktopSidebarLayout({
   footer?: React.ReactNode;
   children: React.ReactNode;
 }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(true); {/*Ferramenta para abrir e fechar sidebar*/}
 
   return (
     <div className="min-h-screen flex">
@@ -23,7 +23,7 @@ export default function DesktopSidebarLayout({
           open ? "w-64" : "w-0"
         }`}
       >
-        <div className="p-4 text-amber-800">
+        <div className="p-4 text-amber-800"> {/*Menu com opções que servem como link para páginas*/}
           <p className="font-semibold mb-4">Menu</p>
           <nav className="space-y-2">
             <Link className="block hover:underline" href="/">
@@ -40,7 +40,7 @@ export default function DesktopSidebarLayout({
             </Link>
           </nav>
         </div>
-        <div className="p-4 border-t h-23 border-t-amber-800">
+        <div className="p-4 border-t h-23 border-t-amber-800"> {/*Mensagem institucional logo abaixo*/}
           <h1 className="flex text-amber-800 justify-center items-center h-23 ">Venha solidificar sua presença moderna no ramo de joias e itens premium</h1>
         </div>
       </aside>
@@ -48,8 +48,8 @@ export default function DesktopSidebarLayout({
       {/* Área principal */}
       <div className="flex-1 min-w-0 flex flex-col min-h-screen">
         {/* Header + botão (botão só no desktop) */}
-        <div className="relative">
-          <button
+        <div className="relative"> {/*Ícone para abertura e fechamento de sidebar*/}
+          <button 
             onClick={() => setOpen((v) => !v)}
             className="hidden md:inline-flex items-center text-amber-800 gap-2 absolute left-4 top-4 z-10 bg-amber-100 backdrop-blur px-3 py-2 rounded-md border border-amber-800"
             aria-label={open ? "Fechar sidebar" : "Abrir sidebar"}

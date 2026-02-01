@@ -1,3 +1,5 @@
+{/*Essa página é padrão para todos os items da cloeção, ao ser chamada ela filtra o id e chama os atributos de cada produto no arquivo produtod.ts*/}
+
 "use client";
 
 import Image from "next/image";
@@ -15,15 +17,17 @@ export default function ProdutoPage({
   const { addToCart } = useCart();
 
 
-  if (!product) {
+  if (!product) { {/*Verificação de existência do produto*/}
     return <p className="p-10">Produto não encontrado</p>;
   }
 
-  return (
-    <>
-      <div className="bg-white h-20 w-full">
+  {/*Página em si*/}
+  return ( 
+    <> 
+      <div className="bg-white h-20 w-full"> {/*Distanciamento da header*/}
 
       </div>
+      {/*Imagem aumentada do produto selecionado com descrição do mesmo ao final*/}
       <div className="bg-amber-50 border border-amber-100 rounded-xl overflow-hidden shadow-sm flex flex-col pt-20 pb-20 p-10 max-w-4xl mx-auto">
         <Image
           src={product.imagem}
@@ -36,6 +40,7 @@ export default function ProdutoPage({
         <h1 className="text-3xl font-semibold mt-6">{product.nome}</h1>
         <p className="text-xl mt-2">R$ {product.preco.toFixed(2)}</p>
 
+        {/*Botão para adição ao carrinho*/}
         <button
           className="
             mt-6 bg-black text-white px-6 py-3 rounded
@@ -47,12 +52,17 @@ export default function ProdutoPage({
           Adicionar ao carrinho
         </button>
       </div>
+
+      {/*Espaçamento*/}
       <div className="bg-white h-20 w-full">
 
       </div>
+
+      {/*Descrição do produto*/}
       <div className="bg-amber-100 h-20 text-amber-800 text-2xl flex justify-center items-center p-6">
         {product.descricao}
       </div>
+      {/*Espaçamento para o footer*/}
       <div className="bg-white h-20 w-full">
 
       </div>
