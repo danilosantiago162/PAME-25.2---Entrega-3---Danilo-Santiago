@@ -20,13 +20,13 @@ export default function Colecao() {
                 key={product.id}
                 className="bg-amber-50 border border-amber-100 rounded-xl overflow-hidden shadow-sm flex flex-col"
             >
-                <div className="relative w-full h-72 p-2">
+                <div className="relative w-full h-72 p-2 group overflow-hidden">
                     <Link href={`/pagProdutos/${product.id}`}>
                         <Image
                             src={product.imagem} 
                             alt={product.nome}
                             fill
-                            className="object-contain"
+                            className="object-contain transition-transform duration-300 ease-in-out md:group-hover:scale-110"
                             priority={false}
                         />
                     </Link>
