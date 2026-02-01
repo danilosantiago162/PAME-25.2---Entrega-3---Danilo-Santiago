@@ -50,6 +50,12 @@ export default function ProdutoPage({
       <div className="bg-white h-20 w-full">
 
       </div>
+      <div className="bg-amber-100 h-20 text-amber-800 text-2xl flex justify-center items-center p-6">
+        {product.descricao}
+      </div>
+      <div className="bg-white h-20 w-full">
+
+      </div>
     </>
   );
 }
