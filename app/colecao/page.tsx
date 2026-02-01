@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { products } from "../Produtos/produtos";
 import { useCart } from "../carrinho_global/carrinho_global";
@@ -7,6 +8,8 @@ import Link from "next/link";
 
 export default function Colecao() {
   const { addToCart } = useCart();
+
+
 
   return (
     <div className="bg-white flex flex-col items-center p-6">
@@ -20,37 +23,38 @@ export default function Colecao() {
                 key={product.id}
                 className="bg-amber-50 border border-amber-100 rounded-xl overflow-hidden shadow-sm flex flex-col"
             >
-                <div className="relative w-full h-72 p-2 group overflow-hidden">
-                    <Link href={`/pagProdutos/${product.id}`}>
-                        <Image
-                            src={product.imagem} 
-                            alt={product.nome}
-                            fill
-                            className="object-contain transition-transform duration-300 ease-in-out md:group-hover:scale-110"
-                            priority={false}
-                        />
-                    </Link>
-                </div>
+                <Link
+                    href={`/pagProdutos/${encodeURIComponent(String(product.id))}`}
+                    className="flex flex-col flex-1"
+                >
+                    <div className="relative w-full h-72 p-2 group overflow-hidden">
+                    <Image
+                        src={product.imagem}
+                        alt={product.nome}
+                        fill
+                        className="object-contain transition-transform duration-300 md:group-hover:scale-110"
+                    />
+                    </div>
 
-                <div className="p-4 flex flex-col gap-3">
-                <div className="flex flex-col">
-                    <p className="text-black text-lg font-semibold">{product.nome}</p>
-                    <p className="text-black">
-                    R$ {Number(product.preco).toFixed(2)}
-                    </p>
-                    <p className="text-black">
-                        {product.categoria}
-                    </p>
-                </div>
+                    <div className="p-4 flex flex-col gap-3">
+                    <p className="text-lg font-semibold">{product.nome}</p>
+                    <p>R$ {Number(product.preco).toFixed(2)}</p>
+                    <p>{product.categoria}</p>
+                    </div>
+                </Link>
 
                 <button
-                    className="mt-2 bg-white text-black px-4 py-2 rounded-lg hover:opacity-90 transition"
+                    className="
+                        mt-2 bg-white text-black px-4 py-2 
+                        rounded-lg hover:opacity-90 transition 
+                        transition-transform duration-150 
+                        active:scale-95 active:opacity-80
+                        "
                     onClick={() => addToCart(product)}
                 >
                     Adicionar ao carrinho
                 </button>
             </div>
-          </div>
         ))}
       </div>
     </div>

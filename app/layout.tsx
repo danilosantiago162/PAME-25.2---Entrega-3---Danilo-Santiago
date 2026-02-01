@@ -5,6 +5,7 @@ import DesktopSidebarLayout from "@/app/components/DesktopSideBarLayout";
 import Footer from "@/app/components/Footer"
 import Header from "@/app/components/Header"
 import { CartProvider } from "./carrinho_global/carrinho_global";
+import CartToast from "@/app/components/CartToast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <DesktopSidebarLayout header={<Header />} footer={<Footer />}>
-          <CartProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <CartProvider>
+          <DesktopSidebarLayout header={<Header />} footer={<Footer />}>
+            <CartToast />
             {children}
-          </CartProvider>
-        </DesktopSidebarLayout>
+          </DesktopSidebarLayout>
+        </CartProvider>
       </body>
     </html>
   );
