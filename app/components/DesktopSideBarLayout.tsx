@@ -19,11 +19,11 @@ export default function DesktopSidebarLayout({
     <div className="min-h-screen flex">
       {/* Sidebar: só desktop, empurra o conteúdo */}
       <aside
-        className={`hidden md:block bg-white border-r-2 border-amber-800 overflow-hidden transition-[width] duration-300 ${
+        className={`hidden md:flex border-r-2 border-amber-800 overflow-hidden transition-[width] duration-300 flex-col ${
           open ? "w-64" : "w-0"
         }`}
       >
-        <div className="w-64 p-4 text-amber-800">
+        <div className="p-4 text-amber-800">
           <p className="font-semibold mb-4">Menu</p>
           <nav className="space-y-2">
             <Link className="block hover:underline" href="/">
@@ -39,6 +39,9 @@ export default function DesktopSidebarLayout({
               Carrinho
             </Link>
           </nav>
+        </div>
+        <div className="p-4 border-t h-23 border-t-amber-800">
+          <h1 className="flex text-amber-800 justify-center items-center h-23 ">Venha solidificar sua presença moderna no ramo de joias e itens premium</h1>
         </div>
       </aside>
 

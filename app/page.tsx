@@ -25,15 +25,21 @@ export default function Home() {
 
       </div>
       <div className="flex flex-col bg-amber-100 justify-center items-center p-6">
-        <p className="text-3xl text-amber-800 font-bold p-10">
+        <p className="text-3xl text-amber-800 font-bold p-10 ">
           História da Marca
         </p>
-        <p className="text-amber-700 pl-60 pr-60">
-          A marca Livia Fontinelli nasce do encontro entre sensibilidade artística, tradição e um olhar contemporâneo sobre a joalheria. Fundada pela empresária que leva seu nome, a marca é reflexo de uma trajetória construída com propósito, delicadeza e paixão pelo detalhe.
-          Desde muito cedo, Livia Fontinelli enxergava nas joias mais do que adornos: via nelas histórias, emoções e símbolos de momentos que merecem ser eternizados. Inspirada por essa visão, decidiu transformar sua admiração em ofício, unindo técnicas artesanais, materiais nobres e um design atemporal.
-          Cada criação da marca carrega um conceito claro: joias feitas para marcar fases da vida. Seja para celebrar conquistas, eternizar vínculos ou expressar identidade, as peças são pensadas para acompanhar quem as usa com significado e elegância.
-          A marca valoriza processos cuidadosos, desde a escolha criteriosa das gemas até o acabamento final, garantindo qualidade, autenticidade e exclusividade em cada joia. O resultado são coleções que equilibram sofisticação e sensibilidade, tradição e inovação.
-          Hoje, Livia Fontinelli Joalheria representa mais do que luxo — representa expressão pessoal, afeto e permanência. Uma marca criada por uma mulher que acredita que o verdadeiro brilho está nas histórias que cada joia carrega.
+        <p className="text-amber-700 text-justify max-w-4xl leading-relaxed">
+          Livia Fontinelli Joalheria nasce da união entre tradição, 
+          sensibilidade artística e um olhar contemporâneo sobre o design. 
+          Fundada pela empresária que leva seu nome, a marca traduz uma 
+          trajetória construída com propósito, atenção aos detalhes e excelência artesanal. 
+          Inspirada pela ideia de que joias vão além do adorno, cada criação é pensada para 
+          marcar momentos, celebrar conquistas e expressar identidade. A marca alia 
+          técnicas artesanais, materiais nobres e design atemporal, resultando em 
+          peças sofisticadas e carregadas de significado. Com processos rigorosos, 
+          da seleção das gemas ao acabamento final, a Livia Fontinelli Joalheria 
+          entrega qualidade, autenticidade e exclusividade. Mais do que luxo, a 
+          marca representa permanência, afeto e histórias que merecem ser eternizadas.
         </p>
       </div>
 
