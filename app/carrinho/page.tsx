@@ -1,6 +1,7 @@
 "use client";
 
 import { useCart } from "../carrinho_global/carrinho_global";
+import Image from "next/image";
 
 export default function CartPage() {
   const { cart, removeFromCart, total } = useCart();
@@ -14,8 +15,14 @@ export default function CartPage() {
       {cart.map(item => (
         <div key={item.id} className="flex justify-between mb-3">
           <div>
-            <p>{item.nome}</p>
-            <p>Qtd: {item.quantity}</p>
+            <div className="flex flex-row p-6 gap-6">
+              
+              <Image src={item.imagem} alt="Foto" width={150} height={150} />
+              <div className="flex flex-col p-2">
+                <p>{item.nome}</p>
+                <p>Qtd: {item.quantity}</p>
+              </div>
+            </div>
           </div>
           <button
             className="text-red-600"
