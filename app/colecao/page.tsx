@@ -9,7 +9,7 @@ import Link from "next/link";
 
 {/*Função exportadora de página de coleção*/}
 export default function Colecao() {
-  const { addToCart } = useCart();
+  const { addToCart } = useCart(); {/*Função a ser usada*/}
 
 
   

@@ -1,6 +1,7 @@
+"use client";
+
 {/*Essa página é padrão para todos os items da cloeção, ao ser chamada ela filtra o id e chama os atributos de cada produto no arquivo produtod.ts*/}
 
-"use client";
 
 import Image from "next/image";
 import { products } from "@/app/Produtos/produtos";
@@ -12,9 +13,10 @@ export default function ProdutoPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  {/*Funções a serem usadas*/}
   const { id } = use(params);
   const product = products.find((p) => String(p.id) === id);
-  const { addToCart } = useCart();
+  const { addToCart } = useCart(); 
 
 
   if (!product) { {/*Verificação de existência do produto*/}

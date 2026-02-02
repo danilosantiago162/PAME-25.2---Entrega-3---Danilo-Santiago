@@ -5,7 +5,9 @@ import { Product } from "../Produtos/produtos";
 
 type CartItem = Product & { quantity: number };
 
+{/*Ferramentas de carrinho*/}
 type CartContextType = {
+  
   cart: CartItem[];
   addToCart: (product: Product) => void;
   removeFromCart: (id: string) => void;
@@ -17,6 +19,7 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | null>(null);
 
+{/*Exporta as funções a serem utilizidas */}
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -55,7 +58,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setCart((prev) => prev.filter((p) => p.id !== id));
   }
 
-  const total = cart.reduce((sum, item) => sum + item.preco * item.quantity, 0);
+  const total = cart.reduce((sum, item) => sum + item.preco * item.quantity, 0); {/*Equação para valor total*/}
 
   return (
     <CartContext.Provider
